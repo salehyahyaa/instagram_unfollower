@@ -91,5 +91,4 @@ python3 main.py
 The program will run automatically every day at 6:30pm. Keep the terminal open or run it as a background process.
 
 ## License
-
 This project is licensed under the MIT License - see the LICENSE file for details.

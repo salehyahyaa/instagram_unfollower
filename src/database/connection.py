@@ -7,7 +7,7 @@ load_dotenv()
 
 class Connection: 
     def get_connection():
-        return psycopg2.connect(os.getenv("instaAuditor"))
+        return psycopg2.connect(os.getenv("DB_URL"))
 
     def save_snapshot(usernames, snapshot_type):
         conn = get_connection()

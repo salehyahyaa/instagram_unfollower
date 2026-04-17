@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+
+# PostgreSQL dumps / backups
+*.sql
+
+# Instagrapi session (VERY IMPORTANT)
+*.json
+
+# Secrets / credentials
+config/secrets.py
+
+# Node (for future Chrome extension)
+node_modules/
+dist/
+build/
+
+# Coverage / testing
+.coverage
+htmlcov/

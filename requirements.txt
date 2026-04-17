@@ -1,0 +1,4 @@
+instagrap==2.4.1
+psycopg2-binary==2.9.11
+python-dotenv==1.2.2
+schedule==1.2.2

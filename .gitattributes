@@ -1,0 +1,15 @@
+# Normalize line endings
+* text=auto
+
+# Force LF for code files
+*.py text eol=lf
+*.sql text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Binary files (no diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

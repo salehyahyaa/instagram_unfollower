@@ -83,12 +83,30 @@ DB_URL=postgresql://your_user@localhost:5432/instaAuditor
 
 ## How to Run
 
-```
-cd src
-python3 main.py
-```
+1. Activate the virtual environment
 
-The program will run automatically every day at 6:30pm. Keep the terminal open or run it as a background process.
+\```
+source venv/bin/activate
+\```
+
+2. Run in the background
+
+\```
+cd src
+nohup python3 main.py &
+\```
+
+The program will run automatically every day at 6:30pm. You can close the terminal and it will keep running.
+
+To check logs:
+\```
+cat src/nohup.out
+\```
+
+To stop the program:
+\```
+pkill -f main.py
+\```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.

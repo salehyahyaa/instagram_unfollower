@@ -10,7 +10,7 @@ class Connection:
         return psycopg2.connect(os.getenv("DB_URL"))
 
     def save_snapshot(usernames, snapshot_type):
-        conn = get_connection()
+        conn = Connection.get_connection()
         cur = conn.cursor()
         cur.executemany(
             "INSERT INTO snapshots (date, username, type) VALUES (%s, %s, %s)",
@@ -21,7 +21,7 @@ class Connection:
         conn.close()
 
     def get_snapshot(snapshot_type, snapshot_date):
-        conn = get_connection()
+        conn = Connection.get_connection()
         cur = conn.cursor()
         cur.execute(
             "SELECT username FROM snapshots WHERE type = %s AND date = %s",
@@ -34,4 +34,4 @@ class Connection:
 
     def get_yesterday_mutuals():
         yesterday = date.today() - timedelta(days=1)
-        return get_snapshot('mutual', yesterday)
+        return Connection.get_snapshot('mutual', yesterday)

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/src/main.py", line 27, in <module>
+    schedule.run_pending()
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/venv/lib/python3.12/site-packages/schedule/__init__.py", line 854, in run_pending
+    default_scheduler.run_pending()
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/venv/lib/python3.12/site-packages/schedule/__init__.py", line 101, in run_pending
+    self._run_job(job)
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/venv/lib/python3.12/site-packages/schedule/__init__.py", line 173, in _run_job
+    ret = job.run()
+          ^^^^^^^^^
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/venv/lib/python3.12/site-packages/schedule/__init__.py", line 691, in run
+    ret = self.job_func()
+          ^^^^^^^^^^^^^^^
+  File "/Users/salehyahya/Desktop/T_Projects/instagram_unfollower/src/main.py", line 12, in run
+    audit = FollowerAuditing()
+            ^^^^^^^^^^^^^^^^^^
+TypeError: FollowerAuditing.__init__() missing 1 required positional argument: 'client'

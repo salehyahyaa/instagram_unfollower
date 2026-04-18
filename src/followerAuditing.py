@@ -4,16 +4,16 @@ from database.connection import Connection
 class FollowerAuditing:
     def __init__(self, client): 
         self.client = client        #hows this the same instance as authUser class's clinet?
-        self.userId = client.userId 
+        self.user_id = client.user_id 
 
     
     def get_followers(self):
-        followers =  self.client.user_followers(self.userId)
+        followers =  self.client.user_followers(self.user_id)
         return [user.username for user in followers.values()]
     
     
     def get_following(self): 
-        following = self.client.user_following(self.userId)
+        following = self.client.user_following(self.user_id)
         return [user.username for user in following.values()]
     
 
@@ -22,7 +22,7 @@ class FollowerAuditing:
         todays_following = set(self.get_following())
         todays_mutuals = todays_followers & todays_following
 
-        yesterdays_mutals = set(Connection.get_yesterday_mutuals)
+        yesterdays_mutals = set(Connection.get_yesterday_mutuals())
 
         unfollowed =  yesterdays_mutals - todays_mutuals
 

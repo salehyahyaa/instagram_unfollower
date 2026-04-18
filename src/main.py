@@ -9,19 +9,13 @@ from notifyUser import NotifyUser
 
 def run(): 
     authUser = AuthUser() 
-    audit = FollowerAuditing()
-    
-    try:                                        #log into prev login(session) else create new login (session)
-        client = authUser.load_session()
-    except:
-        client = authUser.login()
-
+    client = authUser.get_client()
     audit = FollowerAuditing(client)            
     unfollowed = audit.audit_unfollows()
     NotifyUser().notify(unfollowed)
 
 
-schedule.every().day.at("18:30").do(run)        # runs once a day at 6:30pm
+#schedule.every().day.at("18:30").do(run)        # runs once a day at 6:30pm
 
 while True:
     schedule.run_pending()

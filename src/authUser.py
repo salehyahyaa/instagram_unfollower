@@ -11,12 +11,17 @@ class AuthUser:
         self.insta = Client()                        #why in paramter
    
 
-    def login(self):
-        self.insta.login(self._username, self._password) 
-        self.insta.dump_settings("session.json")         #adds json to session.json
-        print("logged in && saved session")
-        return self.insta      #returns logged in session 
-    
+    def get_client(self):
+        try:
+            self.insta.load_settings("session.json")
+            self.insta.get_timeline_feed()                   # validates session
+            print("Session loaded")
+        except:
+            print("Session invalid → logging in once")            
+            self.insta.login(self._username, self._password)
+            self.insta.dump_settings("session.json")
+
+        return self.insta    
 
     def load_session(self):
         self.insta.load_settings("session.json")   # reads from file session.json

@@ -15,8 +15,9 @@ def run():
     NotifyUser().notify(unfollowed)
 
 
-#schedule.every().day.at("18:30").do(run)        # runs once a day at 6:30pm
+if __name__ == "__main__":
+    #schedule.every().day.at("18:30").do(run)  # runs once daily at 6:30pm
 
-while True:
-    schedule.run_pending()
-    time.sleep(60)                              # check every minute if it's time to run
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
